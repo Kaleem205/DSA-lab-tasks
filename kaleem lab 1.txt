@@ -1,0 +1,171 @@
+#include<iostream>
+using namespace std;
+
+void enroll(string*, string*, string*, int);
+void veiw(string*, string*, string*, int);
+void search(string*, string*, string*, int);
+void drop(string*, string*, string*, int);
+
+
+
+
+int main()
+{
+    int size = 5;
+    int choice;
+	string* Oop = new string[size];
+	string* DSA = new string[size];
+	string* AI = new string[size];
+	do
+	{
+	
+	cout<<"1) Enroll.\n";
+	cout<<"2) Veiw.\n";
+	cout<<"3) Search.\n";
+	cout<<"4) Drop.\n";
+	cout<<"enter a choice : ";
+	cin>>choice;
+	
+	switch(choice)
+	{
+		case 1:
+			enroll( Oop, DSA, AI,size);
+			 break;
+			 case 2:
+			 	veiw(Oop, DSA, AI, size);
+			 	break;
+			 	case 3:
+			 		search(Oop, DSA, AI, size);
+			 		break;
+			 		case 4:
+			 		  drop(Oop, DSA, AI, size);
+					 break;
+	}
+}while(true);
+
+    
+}
+
+
+
+
+void enroll(string* Oop,string* DSA,string* AI,int size)
+{
+
+	int choice;
+	string name;
+	
+	cout<<"enter number of student to add : ";
+	cin>>size;
+
+    cout << "************COURSES************.\n";
+    cout << "1) Oop.\n";
+    cout << "2) DSA.\n";
+    cout << "3) AI.\n";
+
+    cout << "Enter choice: ";
+    cin >> choice;
+
+    for (int i = 0; i < size; i++)
+	 {
+        cout << "Enter name of student: ";
+        cin >> name;
+
+        if (choice == 1) 
+		{
+            Oop[i] = name;
+        } 
+		else if (choice == 2) 
+		{
+			
+            DSA[i] = name;
+        } 
+		else if (choice == 3) 
+		{
+            AI[i] = name;
+        } 
+		else 
+		{
+            cout << "Invalid choice.\n";
+        }
+    }
+	
+
+}
+
+
+
+
+void veiw(string* Oop,string* DSA,string* AI,int size)
+{
+	for(int i = 0;i<size;i++)
+	{
+		cout<<"Name of student :"<<Oop[i]<<DSA[i]<<AI[i]<<endl;;
+	}
+}
+
+
+void search(string* Oop,string* DSA,string* AI,int size)
+{
+	int i=0;
+	string name;
+	cout<<"enter name : ";
+	cin>>name;
+	while(size > i)
+	{
+	   if(name == Oop[i] )
+	  {
+	    	 cout<<"Record found "<<Oop[i]<<"on  index "<<i+1 <<endl;
+		  break;
+      }
+       else if(name == DSA[i] )
+	  {
+	    	 cout<<"Record found "<<DSA[i] <<"on  index "<<i+2 <<endl;
+		  break; 
+      }
+   
+       else if(name == AI[i] )
+	  {
+	    	 cout<<"Record found  "<<AI[i]<<"on   index "<<i+3 <<endl;
+		  break;
+      }
+      i++;
+      
+      
+    }
+}
+
+
+void drop(string* Oop,string* DSA,string* AI,int size)
+{
+	
+	int i=0;
+	string name;
+	cout<<"enter name : ";
+	cin>>name;
+	bool found = true;
+	while(size > i)
+	{
+	   if(name == Oop[i] )
+	  {
+	    	 cout<<"Record found "<<Oop[i]<<"on  index "<<i+1 <<endl;
+	    	 found = true;
+		  break;
+      }
+       else if(name == DSA[i] )
+	  {
+	    	 cout<<"Record found "<<DSA[i] <<"on  index "<<i+2 <<endl;
+	    	 found = true;
+		  break; 
+      }
+   
+       else if(name == AI[i] )
+	  {
+	    	 cout<<"Record found  "<<AI[i]<<"on   index "<<i+3 <<endl;
+	    	 found = true;
+		  break;
+      }
+      i++;
+
+}
+}

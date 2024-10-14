@@ -1,0 +1,94 @@
+#include<iostream>
+using namespace std;
+
+void menu();
+double add(double num1,double num2);
+double sub(double num1,double num2);
+double multi(double num1,double num2);
+double divide(double num1,double num2);
+double power(double num1,double num2);
+
+void menu()
+{
+	cout<<"press 1 to add"<<endl;
+	cout<<"press 2 to subtract"<<endl;
+	cout<<"press 3 to multiply"<<endl;
+	cout<<"press 4 to divide"<<endl;
+	cout<<"press 5 to power"<<endl;
+}
+
+
+int main()
+{
+	double num1;
+	double num2;
+	int choice;
+
+	cout<<"enter num"<<endl;
+	cin>>num1;
+
+	cout<<"enter another num"<<endl;
+	cin>>num2;
+
+	menu();
+
+	cout<<"enter choice"<<endl;
+	cin>>choice;
+
+	if(choice == 1)
+	{
+		cout<<"Result"<<add(num1,num2);
+	}
+	else if(choice == 2)
+	{
+		cout<<"Result"<<sub(num1,num2);
+	}
+	else if(choice == 3)
+	{
+		cout<<"Result"<<multi(num1,num2);
+	}
+	else if(choice == 4)
+	{
+		cout<<"Result"<<divide(num1,num2);
+	}
+	else if(choice == 5)
+	{
+		cout<<"Result"<<power(num1,num2);
+	}
+
+
+	system("pause");
+
+}
+
+
+double add(double num1,double num2)
+{
+	return num1 + num2;
+}
+
+double sub(double num1,double num2)
+{
+	return num1 - num2;
+}
+
+double multi(double num1,double num2)
+{
+	return num1 * num2;
+}
+
+double divide(double num1,double num2)
+{
+	return num1 / num2;
+}
+
+
+double power(double num1,double num2)
+{
+	int result = 1;
+	for(int i=1 ; i<=num2;i++)
+	{
+		result = result*num1;
+	}
+	return result;
+}
